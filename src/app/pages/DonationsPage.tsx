@@ -143,7 +143,124 @@ export const DonationsPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen py-16 px-4 pb-4 bg-gradient-to-br from-gray-50 via-green-50/30 to-emerald-50/30">
+    <div className="min-h-screen py-8 sm:py-16 px-3 sm:px-4 pb-4 bg-gradient-to-br from-gray-50 via-green-50/30 to-emerald-50/30">
+      <style>{`
+        /* Tamil text sizing */
+        .tamil-text {
+          font-size: 0.85em;
+          line-height: 1.4;
+        }
+        
+        .tamil-heading {
+          font-size: 0.9em;
+          line-height: 1.3;
+        }
+        
+        .tamil-button {
+          font-size: 0.8em;
+          line-height: 1.2;
+        }
+        
+        .tamil-label {
+          font-size: 0.85em;
+          line-height: 1.3;
+        }
+
+        /* Mobile responsive improvements */
+        @media (max-width: 768px) {
+          .donation-title {
+            font-size: 1.875rem !important;
+          }
+          
+          .donation-subtitle {
+            font-size: 0.875rem !important;
+            line-height: 1.4 !important;
+            padding: 0 0.5rem;
+          }
+          
+          .donation-form-header {
+            padding: 0.75rem 1rem !important;
+          }
+          
+          .donation-form-content {
+            padding: 1rem !important;
+          }
+          
+          .amount-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.5rem !important;
+          }
+          
+          .amount-button-mobile {
+            padding: 0.75rem 0.5rem !important;
+            font-size: 0.75rem !important;
+            min-height: 2.75rem !important;
+          }
+          
+          .amount-button-mobile.tamil {
+            font-size: 0.7rem !important;
+            padding: 0.75rem 0.25rem !important;
+          }
+          
+          .form-input-mobile {
+            height: 2.75rem !important;
+            font-size: 0.875rem !important;
+          }
+          
+          .form-label-mobile {
+            font-size: 0.875rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          
+          .form-label-mobile.tamil {
+            font-size: 0.8rem !important;
+          }
+          
+          .submit-button-mobile {
+            height: 3rem !important;
+            font-size: 0.875rem !important;
+          }
+          
+          .submit-button-mobile.tamil {
+            font-size: 0.8rem !important;
+          }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+          .donation-title {
+            font-size: 1.5rem !important;
+          }
+          
+          .donation-subtitle {
+            font-size: 0.8rem !important;
+          }
+          
+          .amount-button-mobile {
+            padding: 0.625rem 0.375rem !important;
+            font-size: 0.7rem !important;
+            min-height: 2.5rem !important;
+          }
+          
+          .amount-button-mobile.tamil {
+            font-size: 0.65rem !important;
+            padding: 0.625rem 0.25rem !important;
+          }
+          
+          .form-input-mobile {
+            height: 2.5rem !important;
+            font-size: 0.8rem !important;
+          }
+          
+          .form-label-mobile {
+            font-size: 0.8rem !important;
+          }
+          
+          .form-label-mobile.tamil {
+            font-size: 0.75rem !important;
+          }
+        }
+      `}</style>
       
       <div className="max-w-4xl mx-auto">
         {/* Animated Header */}
@@ -157,31 +274,31 @@ export const DonationsPage: React.FC = () => {
                 <Heart className="w-4 h-4 text-green-600 floating-heart" style={{animationDelay: '2s'}} />
               </div>
             </div>
-            <h1 className={getTamilHeadingClass("text-4xl font-bold bg-gradient-to-r from-green-800 to-emerald-700 bg-clip-text text-transparent")}>
+            <h1 className={getTamilHeadingClass("donation-title text-2xl sm:text-4xl font-bold bg-gradient-to-r from-green-800 to-emerald-700 bg-clip-text text-transparent")}>
               {t('donations.title')}
             </h1>
-            <Sparkles className="w-8 h-8 text-green-600 animate-pulse" />
+            <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 animate-pulse" />
           </div>
-          <p className={getTamilClass("text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed")}>
+          <p className={getTamilClass("donation-subtitle text-gray-700 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed px-2")}>
             {t('donations.subtitle')}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Animated Form */}
-          <div className="md:col-span-2">
+          <div className="lg:col-span-2">
             <Card className={`border-green-200 card-hover bg-white/80 backdrop-blur-sm ${isVisible ? 'animate-slideInLeft stagger-2' : 'opacity-0'}`}>
-              <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50 sm:bg-gradient-to-r sm:from-green-50 sm:to-emerald-50 bg-none py-2 sm:py-6 pb-1 sm:pb-6">
-                <CardTitle className={getTamilHeadingClass("text-green-800 flex items-center gap-2 text-base sm:text-lg")}>
+              <CardHeader className="donation-form-header bg-gradient-to-r from-green-50 to-emerald-50 py-3 sm:py-6 pb-2 sm:pb-6">
+                <CardTitle className={getTamilHeadingClass("text-green-800 flex items-center gap-2 text-lg sm:text-xl")}>
                   <IndianRupee className="w-5 h-5 sm:w-6 sm:h-6" />
                   {t('donations.details')}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-4 sm:p-6 pt-3 sm:pt-6">
+              <CardContent className="donation-form-content p-4 sm:p-6 pt-4 sm:pt-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Animated Form Fields */}
                   <div className={`form-field ${isVisible ? 'animate-fadeInUp stagger-3' : 'opacity-0'}`}>
-                    <Label htmlFor="donorName" className={getTamilLabelClass("text-green-800 font-medium text-sm sm:text-base")}>
+                    <Label htmlFor="donorName" className={getTamilLabelClass("form-label-mobile text-green-800 font-medium block mb-2")}>
                       Your Name <span className='text-red-500'>*</span>
                     </Label>
                     <Input
@@ -191,12 +308,12 @@ export const DonationsPage: React.FC = () => {
                       onChange={handleChange}
                       placeholder="Enter your name"
                       required
-                      className="border-green-200 focus:border-green-500 transition-colors h-10 sm:h-12 text-sm sm:text-base"
+                      className="form-input-mobile border-green-200 focus:border-green-500 transition-colors"
                     />
                   </div>
 
                   <div className={`form-field ${isVisible ? 'animate-fadeInUp stagger-4' : 'opacity-0'}`}>
-                    <Label htmlFor="email" className={getTamilLabelClass("text-green-800 font-medium text-sm sm:text-base")}>Email Address (Optional)</Label>
+                    <Label htmlFor="email" className={getTamilLabelClass("form-label-mobile text-green-800 font-medium block mb-2")}>Email Address (Optional)</Label>
                     <Input
                       id="email"
                       name="email"
@@ -204,12 +321,12 @@ export const DonationsPage: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your.email@example.com"
-                      className="border-green-200 focus:border-green-500 transition-colors h-10 sm:h-12 text-sm sm:text-base"
+                      className="form-input-mobile border-green-200 focus:border-green-500 transition-colors"
                     />
                   </div>
 
                   <div className={`form-field ${isVisible ? 'animate-fadeInUp stagger-5' : 'opacity-0'}`}>
-                    <Label htmlFor="phone" className={getTamilLabelClass("text-green-800 font-medium text-sm sm:text-base")}>Phone Number (Optional)</Label>
+                    <Label htmlFor="phone" className={getTamilLabelClass("form-label-mobile text-green-800 font-medium block mb-2")}>Phone Number (Optional)</Label>
                     <Input
                       id="phone"
                       name="phone"
@@ -217,12 +334,12 @@ export const DonationsPage: React.FC = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 89037 60869"
-                      className="border-green-200 focus:border-green-500 transition-colors h-10 sm:h-12 text-sm sm:text-base"
+                      className="form-input-mobile border-green-200 focus:border-green-500 transition-colors"
                     />
                   </div>
 
                   <div className={`form-field ${isVisible ? 'animate-fadeInUp stagger-6' : 'opacity-0'}`}>
-                    <Label htmlFor="purpose" className={getTamilLabelClass("text-green-800 font-medium text-sm sm:text-base")}>
+                    <Label htmlFor="purpose" className={getTamilLabelClass("form-label-mobile text-green-800 font-medium block mb-2")}>
                       Donation Purpose <span className='text-red-500'>*</span>
                     </Label>
                     <select
@@ -230,7 +347,7 @@ export const DonationsPage: React.FC = () => {
                       name="purpose"
                       value={formData.purpose}
                       onChange={handleChange}
-                      className={getTamilClass("flex h-10 sm:h-12 w-full rounded-md border border-green-200 bg-background px-3 py-2 text-sm sm:text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus:border-green-500 transition-colors")}
+                      className={getTamilClass("form-input-mobile flex w-full rounded-md border border-green-200 bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus:border-green-500 transition-colors")}
                       required
                     >
                       <option value="">{t('donations.purpose')}</option>
@@ -247,14 +364,14 @@ export const DonationsPage: React.FC = () => {
                     <Label className={getTamilLabelClass("text-green-800 font-medium text-lg mb-4 block")}>
                       {t('donations.amount')} <span className='text-red-500'>*</span>
                     </Label>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mt-4">
+                    <div className="amount-grid grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mt-4">
                       {predefinedAmounts.map((amount, index) => (
                         <Button
                           key={amount}
                           type="button"
                           variant={formData.amount === amount.toString() ? 'default' : 'outline'}
                           onClick={() => handleAmountSelect(amount)}
-                          className={`amount-button h-11 sm:h-12 text-xs sm:text-sm font-semibold ${
+                          className={`amount-button-mobile ${getTamilButtonClass('')} font-semibold ${
                             formData.amount === amount.toString() 
                               ? 'selected bg-gradient-to-r from-green-700 to-emerald-700 text-white border-green-700' 
                               : 'border-green-200 hover:border-green-500 hover:bg-green-50'
@@ -273,11 +390,11 @@ export const DonationsPage: React.FC = () => {
                       type="button"
                       variant={formData.amount === 'custom' ? 'default' : 'outline'}
                       onClick={() => handleAmountSelect('custom')}
-                      className={getTamilButtonClass(`amount-button w-full mt-3 sm:mt-4 h-11 sm:h-12 text-xs sm:text-sm font-semibold ${
+                      className={`amount-button-mobile ${getTamilButtonClass('')} w-full mt-3 sm:mt-4 font-semibold ${
                         formData.amount === 'custom' 
                           ? 'selected bg-gradient-to-r from-green-700 to-emerald-700 text-white border-green-700' 
                           : 'border-green-200 hover:border-green-500 hover:bg-green-50'
-                      }`)}
+                      }`}
                     >
                       <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                       {t('donations.custom')}
@@ -290,7 +407,7 @@ export const DonationsPage: React.FC = () => {
                   {/* Custom Amount Input with Animation */}
                   {formData.amount === 'custom' && (
                     <div className="animate-fadeInUp form-field">
-                      <Label htmlFor="customAmount" className={getTamilLabelClass("text-green-800 font-medium text-sm sm:text-base")}>
+                      <Label htmlFor="customAmount" className={getTamilLabelClass("form-label-mobile text-green-800 font-medium block mb-2")}>
                         Enter Custom Amount (₹) <span className='text-red-500'>*</span>
                       </Label>
                       <Input
@@ -302,14 +419,14 @@ export const DonationsPage: React.FC = () => {
                         onChange={handleChange}
                         placeholder="Enter amount"
                         required
-                        className="border-green-200 focus:border-green-500 transition-colors h-10 sm:h-12 text-sm sm:text-base"
+                        className="form-input-mobile border-green-200 focus:border-green-500 transition-colors"
                       />
                     </div>
                   )}
 
                   <Button 
                     type="submit" 
-                    className={getTamilButtonClass("w-full h-12 text-sm font-semibold bg-gradient-to-r from-green-700 to-emerald-700 hover:from-green-800 hover:to-emerald-800 transform hover:scale-105 transition-all duration-200 animate-fadeInUp")}
+                    className={`submit-button-mobile ${getTamilButtonClass('')} w-full font-semibold bg-gradient-to-r from-green-700 to-emerald-700 hover:from-green-800 hover:to-emerald-800 transform hover:scale-105 transition-all duration-200 animate-fadeInUp`}
                   >
                     <Heart className="mr-2 w-5 h-5 animate-heartBeat" />
                     {t('donations.proceed')}
