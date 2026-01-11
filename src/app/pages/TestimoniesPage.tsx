@@ -386,7 +386,7 @@ export const TestimoniesPage: React.FC = () => {
 
         {/* HEADER */}
         <div className="text-center mb-8 sm:mb-12">
-          <div className={`flex justify-center items-center gap-3 mb-4 ${isVisible ? 'animate-fadeInUp stagger-1' : 'opacity-0'}`}>
+          <div className={`inline-flex items-center gap-2 mb-4 ${isVisible ? 'animate-fadeInUp stagger-1' : 'opacity-0'}`}>
             <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-700 animate-float" />
             <h1 className={getTamilHeadingClass("testimonies-title text-2xl sm:text-4xl text-green-800")}>{t('testimonies.title')}</h1>
           </div>
