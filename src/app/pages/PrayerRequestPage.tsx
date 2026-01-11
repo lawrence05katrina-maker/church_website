@@ -175,10 +175,18 @@ export const PrayerRequestPage: React.FC = () => {
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
           }
           
           .prayer-submit-button.tamil {
-            font-size: 0.8rem !important;
+            font-size: 0.75rem !important;
+            white-space: normal !important;
+            line-height: 1.2 !important;
+            padding: 0.75rem 1rem !important;
+            height: auto !important;
+            min-height: 3rem !important;
           }
           
           .prayer-sidebar-card {
@@ -237,10 +245,19 @@ export const PrayerRequestPage: React.FC = () => {
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
           }
           
           .prayer-submit-button.tamil {
-            font-size: 0.75rem !important;
+            font-size: 0.7rem !important;
+            white-space: normal !important;
+            line-height: 1.1 !important;
+            padding: 0.5rem 0.75rem !important;
+            height: auto !important;
+            min-height: 2.75rem !important;
+            text-align: center !important;
           }
           
           .prayer-sidebar-title {

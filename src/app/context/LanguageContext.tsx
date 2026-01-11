@@ -749,7 +749,7 @@ const translations = {
     'prayer.request.intention': 'உங்கள் பிரார்த்தனை நோக்கம்',
     'prayer.request.intention.placeholder': 'உங்கள் பிரார்த்தனை வேண்டுகோளைப் பகிரவும்... (உதாரணமாக, குணமடைதல், குடும்பத் தேவைகள், வழிகாட்டுதல், நன்றி தெரிவித்தல்)',
     'prayer.request.intention.note': 'உங்கள் பிரார்த்தனை வேண்டுகோள் இரகசியமாக வைக்கப்படும்',
-    'prayer.request.submit': 'பிரார்த்தனை வேண்டுகோளைச் சமர்ப்பிக்கவும்',
+    'prayer.request.submit': 'வேண்டுகோள் சமர்ப்பிக்கவும்',
     'prayer.request.daily.times': 'தினசரி பிரார்த்தனை நேரங்கள்',
     'prayer.request.daily.times.subtitle': 'உங்கள் நோக்கங்கள் பின்வரும் நேரங்களில் நினைவுகூரப்படும்:',
     'prayer.request.morning.mass': 'காலைத் திருப்பலி',
